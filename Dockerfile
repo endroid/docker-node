@@ -17,3 +17,5 @@ WORKDIR /app
 RUN chown -R 1000 /app
 
 USER node
+
+RUN npm install --global @nestjs/cli @vue/cli pm2
