@@ -12,10 +12,16 @@ ENV PATH=$PATH:/home/node/.npm-global/bin
 # Install some global packages
 RUN apk add --no-cache bash git openssh
 
+# Add entrypoint
+ADD entrypoint.sh /home/root/entrypoint.sh
+
 WORKDIR /app
 
 RUN chown -R 1000 /app
 
 USER node
 
+# Install CLI tools (updated via entry point)
 RUN npm install --global @nestjs/cli @vue/cli pm2
+
+ENTRYPOINT /home/root/entrypoint.sh
