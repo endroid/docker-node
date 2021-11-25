@@ -2,6 +2,6 @@
 
 set -e
 
-npm update --global @nestjs/cli @vue/cli pm2
+npm update --global @nestjs/cli @vue/cli pm2 | true
 
 node
