@@ -10,7 +10,7 @@ ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
 ENV PATH=$PATH:/home/node/.npm-global/bin
 
 # Install some global packages
-RUN apk add --no-cache bash git openssh
+RUN apk add --no-cache bash git jq moreutils openssh yq
 
 # Add entrypoint
 ADD entrypoint.sh /home/root/entrypoint.sh
