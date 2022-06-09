@@ -1,4 +1,4 @@
-FROM node:14.18.0-alpine3.14
+FROM node:18.3.0-alpine3.16
 
 # Install usermod and usermod node
 RUN echo http://dl-2.alpinelinux.org/alpine/edge/community/ >> /etc/apk/repositories
