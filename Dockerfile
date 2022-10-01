@@ -14,6 +14,7 @@ RUN apk add --no-cache bash git jq moreutils openssh yq
 
 # Add entrypoint
 ADD entrypoint.sh /home/root/entrypoint.sh
+RUN chmod +x /home/root/entrypoint.sh
 
 WORKDIR /app
 
@@ -22,6 +23,6 @@ RUN chown -R 1000 /app
 USER node
 
 # Install CLI tools (updated via entry point)
-RUN npm install --global @nestjs/cli @vue/cli pm2
+RUN /home/root/entrypoint.sh
 
 ENTRYPOINT /home/root/entrypoint.sh
