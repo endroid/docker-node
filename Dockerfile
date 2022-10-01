@@ -25,4 +25,4 @@ USER node
 # Install CLI tools (updated via entry point)
 RUN /home/root/entrypoint.sh
 
-ENTRYPOINT /home/root/entrypoint.sh
+#ENTRYPOINT /home/root/entrypoint.sh
