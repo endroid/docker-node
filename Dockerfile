@@ -1,4 +1,4 @@
-FROM node:24.8.0-alpine3.22
+FROM node:25.6.1-alpine3.23
 
 # Install usermod and usermod node
 RUN echo http://dl-2.alpinelinux.org/alpine/edge/community/ >> /etc/apk/repositories
@@ -17,6 +17,3 @@ WORKDIR /app
 RUN chown -R 1000 /app
 
 USER node
-
-# Install CLI tools
-RUN npm install --location=global npm@latest @nestjs/cli @vue/cli pm2
